@@ -12,5 +12,5 @@ class HelloWorldController {
   String helloWorld() {
     return "Hello World! " + OffsetDateTime.now();
   }
-  
+
 }
