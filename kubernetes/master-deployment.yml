@@ -20,7 +20,7 @@ metadata:
   labels:
     group: example
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: mock-service
@@ -45,4 +45,6 @@ spec:
               name: paste-volume
       volumes:
         - name: paste-volume
-          emptyDir: {}
+          hostPath:
+            path: /data
+            type: DirectoryOrCreate
