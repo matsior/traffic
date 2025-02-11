@@ -18,11 +18,10 @@ class PasteService {
   
   private final Path uploadPath;
   
-  PasteService(@Value("${mock.upload-path}") Path uploadPath) throws IOException {
+  PasteService(@Value("${mock.upload-path}") Path uploadPath) {
     this.uploadPath = uploadPath;
     log.info("Uploading files to: {}", uploadPath);
   }
-  
   
   public List<String> getAll() {
     try {
