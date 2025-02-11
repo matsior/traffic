@@ -20,7 +20,7 @@ metadata:
   labels:
     group: example
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: mock-service
@@ -33,10 +33,16 @@ spec:
     spec:
       containers:
         - name: mock-service
-          image: matsior/mock-service:0.0.1
+          image: matsior/mock-service:0.0.3
           livenessProbe:
             httpGet:
               path: /actuator/health
               port: 8080
             periodSeconds: 10
             initialDelaySeconds: 5
+          volumeMounts:
+            - mountPath: /files
+              name: paste-volume
+      volumes:
+        - name: paste-volume
+          emptyDir: {}
