@@ -25,3 +25,6 @@ management:
       enabled: true
     build:
       enabled: true
+
+mock:
+  upload-path: files/paste.txt

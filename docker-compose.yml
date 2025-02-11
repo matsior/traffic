@@ -1,10 +1,10 @@
 services:
   mock-service:
-    image: matsior/mock-service:0.0.2
+    image: matsior/mock-service:0.0.3
     container_name: mock-service
     ports:
       - '8080:8080'
     volumes:
-      - ./paste.txt:/paste.txt
+      - mock-service:/files
 volumes:
   mock-service:
