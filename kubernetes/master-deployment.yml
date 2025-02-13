@@ -43,6 +43,9 @@ spec:
           volumeMounts:
             - mountPath: /files
               name: paste-volume
+          env:
+            - name: MOCK_TEST_VALUE
+              value: k8s-value
       volumes:
         - name: paste-volume
           persistentVolumeClaim:

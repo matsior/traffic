@@ -28,3 +28,4 @@ management:
 
 mock:
   upload-path: files/paste.txt
+  test-value: test
