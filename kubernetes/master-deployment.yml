@@ -45,7 +45,10 @@ spec:
               name: paste-volume
           env:
             - name: MOCK_TEST_VALUE
-              value: k8s-value
+              valueFrom:
+                configMapKeyRef:
+                  name: data-store-env
+                  key: mock-test-value
       volumes:
         - name: paste-volume
           persistentVolumeClaim:
@@ -78,3 +81,10 @@ spec:
   resources:
     requests:
       storage: 1Gi
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: data-store-env
+data:
+  mock-test-value: k8s-config-map
