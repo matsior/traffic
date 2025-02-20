@@ -1,0 +1,13 @@
+apiVersion: skaffold/v4beta12
+kind: Config
+metadata:
+  name: traffic
+build:
+  artifacts:
+    - image: matsior/mock-service
+      context: mock-service
+      docker:
+        dockerfile: Dockerfile
+manifests:
+  rawYaml:
+    - kubernetes/**/*.yml
