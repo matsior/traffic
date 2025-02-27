@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: masterdata
+
+server:
+  servlet:
+    context-path: /masterdata

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: masterdata
+  labels:
+    group: example
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: masterdata
+      layer: backend
+  template:
+    metadata:
+      labels:
+        app: masterdata
+        layer: backend
+    spec:
+      containers:
+        - name: mock-service
+          image: matsior/masterdata:0.0.1
