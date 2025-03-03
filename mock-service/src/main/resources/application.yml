@@ -29,3 +29,5 @@ management:
 mock:
   upload-path: files/paste.txt
   test-value: test
+
+masterdata-url: http://masterdata:8080/masterdata
